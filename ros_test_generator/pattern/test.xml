@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package author="{{ author_name }}" author_email="{{ author_email }}" copyright="To be defined"
+  description="test package for {{ package_name }}.{{ node_name }}" license="Apache 2.0" name="{{ test_pkg_name }}" template="nodetest">
+  <component name="{{ node_name }}" package="{{ package_name }}">
+{% for item in cyclic_publisher %}
+    <cyclicPublisher frequency="100" name="{{ item['topic_name'] }}"/>
+{% endfor %}
+{% for item in publisher %}
+    <publisher name="{{ item['topic_name'] }}"/>
+{% endfor %}
+{% for item in dyn_param %}
+    <dynParameter name="{{ item['name'] }}"/>
+{% endfor %}
+{% for item in filter %}
+    <filter topic_in="{{ item['topic_in'] }}" topic_out="{{ item['topic_out'] }}"/>
+{% endfor %}
+{% for item in service %}
+    <service name="{{ item['service_name'] }}"/>
+{% endfor %}
+  </component>
+</package>

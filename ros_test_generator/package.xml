@@ -16,8 +16,9 @@
   <depend>rospy</depend>
   <exec_depend>python-termcolor</exec_depend>
   <exec_depend>python-jinja2</exec_depend>
-
+  <exec_depend>ros_model_parser</exec_depend>
   <test_depend>roslint</test_depend>
+  <exec_depend>python-jinja2</exec_depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
