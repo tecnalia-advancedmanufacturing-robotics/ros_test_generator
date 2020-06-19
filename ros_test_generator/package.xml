@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>ros_test_generator</name>
+  <version>0.0.0</version>
+  <description>
+    Generation of package tests from ros-model DLS
+  </description>
+
+  <maintainer email="anthony.remazeilles@tecnalia.com">Anthony Remazeilles</maintainer>
+
+  <license>Apache 2.0</license>
+
+  <author email="anthony.remazeilles@tecnalia.com">Anthony Remazeilles</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>rospy</depend>
+  <exec_depend>python-termcolor</exec_depend>
+  <exec_depend>python-jinja2</exec_depend>
+
+  <test_depend>roslint</test_depend>
+
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+    <!-- Other tools can request additional information be placed here -->
+  </export>
+</package>
