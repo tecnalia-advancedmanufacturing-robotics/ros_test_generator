@@ -14,15 +14,26 @@ from ros_model_parser.rosmodel_parser import RosModelParser
 from rospkg import RosPack
 from jinja2 import Environment, FileSystemLoader, exceptions
 
+import argparse
 import os
+import sys
 
 
 def main():
-    print "Hello world"
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--model", '-m', required=True, type= str, help='node model')
+    parser.add_argument("--out", '-o', required=True, type= str,  help='generated test spec')
 
-    rp = RosPack()
-    model_path = os.path.join(rp.get_path("ros_model_parser"),"resources/cob_light.ros")
-    rossystem_parser = RosModelParser(model_path, isFile=True)
+    args = parser.parse_args()
+
+    generate_xml(args.model, args.out)
+
+
+def generate_xml(model_file, output_file):
+
+    # rp = RosPack()
+    # model_path = os.path.join(rp.get_path("ros_model_parser"),"resources/cob_light.ros")
+    rossystem_parser = RosModelParser(model_file, isFile=True)
 
     static_model = rossystem_parser.parse()
 
@@ -73,6 +84,7 @@ def main():
 
     print "data for generation: %s" % cfg
 
+    rp = RosPack()
     path_pattern = os.path.join(rp.get_path("ros_test_generator"), "pattern")
 
     template_environment = Environment(autoescape=False,
@@ -82,3 +94,6 @@ def main():
     file_generated = template_environment.get_template("test.xml").render(cfg)
 
     print "generated file: \n %s" % file_generated
+
+    with open(output_file, 'w') as out_file:
+            out_file.write(file_generated)
