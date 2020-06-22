@@ -3,7 +3,7 @@
   description="test package for {{ package_name }}.{{ node_name }}" license="Apache 2.0" name="{{ test_pkg_name }}" template="nodetest">
   <component name="{{ node_name }}" package="{{ package_name }}">
 {% for item in cyclic_publisher %}
-    <cyclicPublisher frequency="100" name="{{ item['topic_name'] }}"/>
+    <cyclicPublisher frequency="{{ item['frequency'] }}" name="{{ item['topic_name'] }}"/>
 {% endfor %}
 {% for item in publisher %}
     <publisher name="{{ item['topic_name'] }}"/>
