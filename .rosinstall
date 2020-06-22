@@ -1,7 +1,7 @@
 - git:
     local-name: 'ros_pkg_gen'
-    uri: 'git@git.code.tecnalia.com:anthony.remazeilles/ros_pkg_gen.git'
-    version: '32-additional-tests'
+    uri: 'https://github.com/tecnalia-advancedmanufacturing-robotics/ros_pkg_gen'
+    version: 'master'
 - git:
     local-name: 'ros_node_test'
     uri: 'https://github.com/tecnalia-advancedmanufacturing-robotics/ros_node_test.git'
