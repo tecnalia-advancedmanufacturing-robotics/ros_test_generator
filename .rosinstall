@@ -1,0 +1,12 @@
+- git:
+    local-name: 'ros_pkg_gen'
+    uri: 'git@git.code.tecnalia.com:anthony.remazeilles/ros_pkg_gen.git'
+    version: '32-additional-tests'
+- git:
+    local-name: 'ros_node_test'
+    uri: 'https://github.com/tecnalia-advancedmanufacturing-robotics/ros_node_test.git'
+    version: 'master'
+- git:
+    local-name: 'ros_model_parser'
+    uri: 'https://github.com/ipa320/ros_model_parser.git'
+    version: 'master'
