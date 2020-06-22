@@ -47,7 +47,7 @@ catkin build
 source devel/setup.zsh
 ```
 
-The first operation parse the ROS model and interact with you to complete the test definition.
+The first operation parses the ROS model and interacts with you to complete the test definition.
 The second operation generates the testing package.
 
 > [!WARNING]
