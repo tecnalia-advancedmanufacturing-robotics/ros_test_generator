@@ -54,7 +54,6 @@ The second operation generates the testing package.
 > the generated test files need to be open to check and adjust the testing configuration.
 > This is particularly the case if a service or a filter-like node is tested (to introduce input& output values in the test file)
 
-
 ## Acknowledgements
 
 This development is supported by the European Union’s Horizon 2020 project [ROSIN][rosin_website].
