@@ -29,14 +29,18 @@ The installation procedure follows the standard operations as any ROS package do
 ```shell
 # Assuming ~/catkin_ws is the workspace in which the repository has been downloaded
 cd ~/catkin_ws
+cp src/ros_test_generator/.rosinstall src/
+wstool update -t src
 sudo rosdep init
 rosdep update
 rosdep install --from-paths src --ignore-src --rosdistro $ROS_DISTRO
+catkin build
 ```
 
 ### Usage
 
-We assume a package has been analysed using [IPA320 tools][ros_model], and that a `.ros` model file is available for the node of interest:
+We assume a package has been analysed using [IPA320 tools][ros_model],
+and that a `.ros` model file is available for the node of interest:
 
 ```shell
 # go to the workspace root
@@ -53,7 +57,6 @@ The second operation generates the testing package.
 > [!WARNING]
 > the generated test files need to be open to check and adjust the testing configuration.
 > This is particularly the case if a service or a filter-like node is tested (to introduce input& output values in the test file)
-
 
 ## Acknowledgements
 

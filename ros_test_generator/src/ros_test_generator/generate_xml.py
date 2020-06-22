@@ -184,12 +184,15 @@ def generate_xml(model_file, output_file):
         'filter': list(),
         'service': list()}
 
-    for item in publishers:
-        cfg['publisher'].append({'topic_name': item.get("name")[0]})
-    for item in subscribers:
-        cfg['subscriber'].append({'topic_name': item.get("name")[0]})
-    for item in svr_servers:
-        cfg['service'].append({'service_name': item.get("name")[0]})
+    if publishers is not None:
+        for item in publishers:
+            cfg['publisher'].append({'topic_name': item.get("name")[0]})
+    if subscribers is not None:
+        for item in subscribers:
+            cfg['subscriber'].append({'topic_name': item.get("name")[0]})
+    if svr_servers is not None:
+        for item in svr_servers:
+            cfg['service'].append({'service_name': item.get("name")[0]})
 
     print "data for generation: %s" % cfg
 
